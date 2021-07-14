@@ -1,0 +1,20 @@
+.App {
+  &-link {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      background: transparentize(#359b79, .8);
+    }
+
+    &.is-active {
+      background: transparentize(#359b79, .6);
+    }
+  }
+
+  &-navigation {
+    display: flex;
+    margin-bottom: 15px;
+  }
+}
