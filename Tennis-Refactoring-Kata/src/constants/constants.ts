@@ -1,0 +1,1 @@
+export const SCORES_LIST: string[] = ['Love', 'Fifteen', 'Thirty', 'Forty'];
