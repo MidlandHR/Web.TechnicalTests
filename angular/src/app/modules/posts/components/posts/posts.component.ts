@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PostService } from '../../services/post.service';
+import { Post } from '../models/post';
 
 @Component({
   selector: 'posts',
@@ -6,5 +9,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit {
+
+  public posts: Observable<Post[]> | undefined;
+
+  constructor(private postService: PostService) { }
+
+  ngOnInit(): void {
+    this.posts = this.postService.getPosts();
+  }
 }

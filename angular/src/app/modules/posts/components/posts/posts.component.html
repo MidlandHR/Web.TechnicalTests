@@ -1,49 +1,15 @@
-<div id="post-1">
-  <h2>Post 1</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at orci id sem interdum auctor. Vivamus nisl purus, cursus nec lorem sit amet, facilisis commodo orci. Cras vitae iaculis velit. In ullamcorper velit non metus tempor, nec bibendum urna porta. Ut nec neque consequat, rhoncus sem ac, placerat est. Quisque vel lacinia eros, eu dignissim leo. Nullam dapibus tellus in eleifend tincidunt. Proin ullamcorper, lectus sit amet dignissim consectetur, quam quam tristique metus, eget faucibus velit justo in tellus. Curabitur pellentesque tincidunt ornare. Nam semper nulla turpis, sit amet aliquam magna rhoncus vitae. Sed fringilla augue eu ultricies convallis. Pellentesque lacinia id nibh ac rhoncus. Vestibulum sapien ligula, adipiscing et nisi id, feugiat tristique erat. Suspendisse non est metus.</p>
-  <div class="tags">
-    <span>#tag1</span>
-    <span>#tag2</span>
-    <span>#tag3</span>
+
+<div *ngFor="let post of posts | async">
+  <h2>{{post.title }}</h2>
+  <p>{{ post.text }}</p>
+  <div *ngFor="let tag of post.tags" class="tags">
+    <span>{{ tag.name }}</span>
   </div>
 
   <div class="rating">
-    <p><img src="app/modules/posts/_resources/thumb-up-dark.png" /><span class="up-rating">0</span><img src="app/modules/posts/_resources/thumb-down-dark.png" /><span class="down-rating">0</span></p>
-  </div>
-</div>
-<div id="post-2">
-  <h2>Post 2</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at orci id sem interdum auctor. Vivamus nisl purus, cursus nec lorem sit amet, facilisis commodo orci. Cras vitae iaculis velit. In ullamcorper velit non metus tempor, nec bibendum urna porta. Ut nec neque consequat, rhoncus sem ac, placerat est. Quisque vel lacinia eros, eu dignissim leo. Nullam dapibus tellus in eleifend tincidunt. Proin ullamcorper, lectus sit amet dignissim consectetur, quam quam tristique metus, eget faucibus velit justo in tellus. Curabitur pellentesque tincidunt ornare. Nam semper nulla turpis, sit amet aliquam magna rhoncus vitae. Sed fringilla augue eu ultricies convallis. Pellentesque lacinia id nibh ac rhoncus. Vestibulum sapien ligula, adipiscing et nisi id, feugiat tristique erat. Suspendisse non est metus.</p>
-  <div class="tags">
-    <span>#tag1</span>
-    <span>#tag2</span>
-    <span>#tag3</span>
-  </div>
-  <div class="rating">
-    <p><img src="app/modules/posts/_resources/thumb-up-dark.png" /><span class="up-rating">0</span><img src="app/modules/posts/_resources/thumb-down-dark.png" /><span class="down-rating">0</span></p>
-  </div>
-</div>
-<div id="post-3">
-  <h2>Post 3</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at orci id sem interdum auctor. Vivamus nisl purus, cursus nec lorem sit amet, facilisis commodo orci. Cras vitae iaculis velit. In ullamcorper velit non metus tempor, nec bibendum urna porta. Ut nec neque consequat, rhoncus sem ac, placerat est. Quisque vel lacinia eros, eu dignissim leo. Nullam dapibus tellus in eleifend tincidunt. Proin ullamcorper, lectus sit amet dignissim consectetur, quam quam tristique metus, eget faucibus velit justo in tellus. Curabitur pellentesque tincidunt ornare. Nam semper nulla turpis, sit amet aliquam magna rhoncus vitae. Sed fringilla augue eu ultricies convallis. Pellentesque lacinia id nibh ac rhoncus. Vestibulum sapien ligula, adipiscing et nisi id, feugiat tristique erat. Suspendisse non est metus.</p>
-  <div class="tags">
-    <span>#tag1</span>
-    <span>#tag2</span>
-    <span>#tag3</span>
-  </div>
-  <div class="rating">
-    <p><img src="app/modules/posts/_resources/thumb-up-dark.png" /><span class="up-rating">0</span><img src="app/modules/posts/_resources/thumb-down-dark.png" /><span class="down-rating">0</span></p>
-  </div>
-</div>
-<div id="post-4">
-  <h2>Post 4</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at orci id sem interdum auctor. Vivamus nisl purus, cursus nec lorem sit amet, facilisis commodo orci. Cras vitae iaculis velit. In ullamcorper velit non metus tempor, nec bibendum urna porta. Ut nec neque consequat, rhoncus sem ac, placerat est. Quisque vel lacinia eros, eu dignissim leo. Nullam dapibus tellus in eleifend tincidunt. Proin ullamcorper, lectus sit amet dignissim consectetur, quam quam tristique metus, eget faucibus velit justo in tellus. Curabitur pellentesque tincidunt ornare. Nam semper nulla turpis, sit amet aliquam magna rhoncus vitae. Sed fringilla augue eu ultricies convallis. Pellentesque lacinia id nibh ac rhoncus. Vestibulum sapien ligula, adipiscing et nisi id, feugiat tristique erat. Suspendisse non est metus.</p>
-  <div class="tags">
-    <span>#tag1</span>
-    <span>#tag2</span>
-    <span>#tag3</span>
-  </div>
-  <div class="rating">
-    <p><img src="app/modules/posts/_resources/thumb-up-dark.png" /><span class="up-rating">0</span><img src="app/modules/posts/_resources/thumb-down-dark.png" /><span class="down-rating">0</span></p>
+    <p>
+      <img src="app/modules/posts/_resources/thumb-up-dark.png" /><span class="up-rating">{{ post.votes.up }}</span>
+      <img src="app/modules/posts/_resources/thumb-down-dark.png" /><span class="down-rating">{{ post.votes.down }}</span>
+    </p>
   </div>
 </div>
